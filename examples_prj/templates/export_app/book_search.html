@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% load bootstrap %}
+
+{% block title %}Search book{% endblock %}
+
+{% block page_title %}Search book{% endblock page_title %}
+
+
+{% block content %}
+
+   <form action="" method="post">{% csrf_token %}
+                        <table>
+                            {{form|bootstrap}}
+                        </table>
+                        
+                        <button class="btn btn-success" type="submit">
+                            <i class="icon-ok icon-white"></i> Grabar
+                        </button>
+
+                        <a href="{% url 'dispositivo_list' %}" class="btn btn-primary"><i class="icon-circle-arrow-left icon-white"></i> Cancelar</a>
+
+                    </form>
+
+{% endblock content %}
+
