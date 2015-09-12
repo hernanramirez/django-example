@@ -1,15 +1,14 @@
 ========================
-django-twoscoops-project
+django-examples
 ========================
 
-A project template for Django 1.6 (with a tag for Django 1.5).
+Proyecto de ejemplos para Djeango 1.8.4
 
-To use this project follow these steps:
+Para ejecutar el siguiente proyecto deberá seguir los siguientes pasos:
 
-#. Create your working environment
-#. Install Django
-#. Create the new project using the django-two-scoops template
-#. Install additional dependencies
+#. Crear ambiente de trabajo
+#. Instalar Django
+#. Instalar las dependencias
 
 *note: these instructions show creation of a project called "icecream".  You
 should replace this name with the actual name of your project.*

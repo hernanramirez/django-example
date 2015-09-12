@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% load bootstrap %}
+
+
+{% block title %}Listado de Libros{% endblock %}
+
+{% block page_title %}Listado de Libros{% endblock page_title %}
+
+
+{% block content %}
+
+    <!-- start: PAGE CONTENT -->
+
+    <div class="row">
+        <div class="col-sm-12">
+            
+            <!-- start: DYNAMIC TABLE PANEL -->
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <i class="fa fa-external-link-square"></i>
+                    Listado
+                    <div class="panel-tools">
+                        <a class="btn btn-xs btn-link panel-collapse collapses" href="#"> </a>
+                    </div>
+                </div>
+                <div class="panel-body">
+               
+                    
+          <a data-toggle="modal" class="btn btn-info" href='{% url 'form_modal' %}' data-target="#myModal">Export to Excel</a>
+ 
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        </div> <!-- /.modal-content -->
+    </div> <!-- /.modal-dialog -->
+</div> <!-- /.modal -->
+
+
+                    <table class="table table-striped table-bordered table-hover table-full-width" id="dias_list">
+                        <thead>
+                            <tr>
+                                <th>Código</th>
+                                <th class="hidden-xs">Name</th>
+                                <th>published</th>
+                                <th class="hidden-xs">Price</th>
+                                <th>Acción</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                           {% for book in object_list %}
+                            <tr>
+                                
+                                <td>{{ book.id }}</td>
+                                <td class="hidden-xs">{{ book.name}}</td>
+                                <td>{{ book.published }}</td>
+                                <td>{{ book.price }}</td>
+                                
+                                <td class="center">
+
+                                    <div class="visible-md visible-lg hidden-sm hidden-xs">
+                                        <a href="#" class="btn btn-xs btn-teal tooltips" data-placement="top" data-original-title="Editar"><i class="fa fa-edit"></i></a>
+                                        
+                                        <a href="#" class="btn btn-xs btn-bricky tooltips" data-placement="top" data-original-title="Eliminar"><i class="fa fa-times fa fa-white"></i></a>
+                                    </div>
+                                
+
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                    {% include "_pagination.html" %}
+                </div>
+            </div>
+            <!-- end: DYNAMIC TABLE PANEL -->
+
+        </div>
+    </div>
+
+    <!-- end: PAGE CONTENT-->
+
+{% endblock content %}
+
+
+{% block extra_js %}
+    <script src="http://code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
+    <script src="{% static 'js/jquery.ui.datepicker-es.js' %}"></script>  
+    <script src="http://jqueryvalidation.org/files/dist/jquery.validate.min.js"></script>
+    <script src="http://jqueryvalidation.org/files/dist/additional-methods.min.js"></script>
+      
+{% endblock extra_js %}
