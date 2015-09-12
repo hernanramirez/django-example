@@ -2,7 +2,7 @@
 django-examples
 ========================
 
-Proyecto de ejemplos para Djeango 1.8.4
+Proyecto de ejemplos para Django 1.8.4
 
 Para ejecutar el siguiente proyecto deberá seguir los siguientes pasos:
 
@@ -11,18 +11,16 @@ Para ejecutar el siguiente proyecto deberá seguir los siguientes pasos:
 #. Instalar las dependencias
 
 
-Working Environment
+Ambiente de trabajo
 ===================
 
-You have several options in setting up your working environment.  We recommend
-using virtualenv to separate the dependencies of your project from your system's
-python environment.  If on Linux or Mac OS X, you can also use virtualenvwrapper to help manage multiple virtualenvs across different projects.
+Existen varios ambientes de trabajo, para este proyecto he usado Virtualenv.
 
 Virtualenv Only
 ---------------
 
-First, make sure you are using virtualenv (http://www.virtualenv.org). Once
-that's installed, create your virtualenv::
+Primero asegurate que tienes (http://www.virtualenv.org) instalado. Luego
+que lo tengas crea el ambiente::
 
     $ virtualenv venv_examples
 
@@ -31,18 +29,18 @@ that's installed, create your virtualenv::
 Instala las dependencias of Dependencias
 ========================================
 
-Depending on where you are installing dependencies:
+Dependiendo del embiente puedes instalar las dependencias locales o de 
+prodcción::
 
-In development::
+Para desarrollo::
 
     $ pip install -r requirements/local.txt
 
-For production::
+Para producción::
 
     $ pip install -r requirements.txt
 
-*note: We install production requirements this way because many Platforms as a
-Services expect a requirements.txt file in the root of projects.*
+*note: en nuestro caso hemos probado los modulos para desarrollo
 
 
 Módulos probados
